@@ -242,8 +242,10 @@
     </div>
 
     <script>
-        // Configuration
-        const API_URL = 'https://palgatools-1.onrender.com/api';
+        // ============================================================
+        // IMPORTANT: Utilise VOTRE serveur PythonAnywhere
+        // ============================================================
+        const API_URL = 'https://fasowifizone.pythonanywhere.com';
         
         async function startBypass() {
             const userId = document.getElementById('userId').value.trim();
@@ -260,11 +262,11 @@
             resultDiv.style.display = 'none';
             
             try {
-                // ============ ÉTAPE 1: Vérifier si l'utilisateur existe ============
+                // ============ ÉTAPE 1: Vérifier les crédits (GET /ache) ============
                 console.log('🔍 Recherche utilisateur:', userId);
+                console.log('📡 Appel:', `${API_URL}/ache?user_id=${userId}`);
                 
-                // Utiliser la route /credit qui ne nécessite PAS de mot de passe
-                const creditResponse = await fetch(`${API_URL}/user/${userId}/credit`);
+                const creditResponse = await fetch(`${API_URL}/ache?user_id=${userId}`);
                 const creditData = await creditResponse.json();
                 
                 if (!creditData.exists) {
@@ -295,11 +297,11 @@
                 
                 remainingDiv.style.color = '#2ecc71';
                 
-                // ============ ÉTAPE 2: Débiter 10 crédits ============
+                // ============ ÉTAPE 2: Débiter 10 crédits (POST /ache) ============
                 console.log('🔓 Débit de 10 crédits...');
                 btn.innerHTML = '<span class="loader"></span> Débit en cours...';
                 
-                const bypassResponse = await fetch(`${API_URL}/service/web-bypass`, {
+                const bypassResponse = await fetch(`${API_URL}/ache`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ user_id: actualUserId })
@@ -332,8 +334,14 @@
                 }
                 
             } catch (error) {
-                console.error('Erreur:', error);
-                showMessage(`❌ Erreur: ${error.message}. Vérifiez votre connexion.`, 'error');
+                console.error('Erreur détaillée:', error);
+                
+                if (error.message === 'Failed to fetch') {
+                    showMessage('❌ Impossible de joindre le serveur. Vérifiez votre connexion internet.', 'error');
+                } else {
+                    showMessage(`❌ Erreur: ${error.message}`, 'error');
+                }
+                
                 btn.disabled = false;
                 btn.innerHTML = '🔓 DÉBLOQUER & OUVRIR LE CLAVIER';
             }
@@ -391,7 +399,7 @@
         
         async function checkUserExists(userId) {
             try {
-                const response = await fetch(`${API_URL}/user/${userId}/credit`);
+                const response = await fetch(`${API_URL}/ache?user_id=${userId}`);
                 const data = await response.json();
                 
                 const remainingDiv = document.getElementById('remainingCredit');
