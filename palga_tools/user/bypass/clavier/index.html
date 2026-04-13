@@ -1,0 +1,625 @@
+<!-- index.html - Page web PALGA WEB BYPASSING -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALGA WEB BYPASSING - Services de déblocage mobile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: rgba(255,255,255,0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Panels */
+        .panel {
+            display: none;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.5s;
+        }
+
+        .panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Formulaires */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.9);
+            font-size: 1em;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Cartes services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.15);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.25);
+        }
+
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .service-price {
+            font-size: 1.5em;
+            color: #ffd700;
+            margin: 10px 0;
+        }
+
+        .service-btn {
+            background: #ff9800;
+            margin-top: 15px;
+        }
+
+        /* Messages */
+        .message {
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .message.success {
+            background: #4CAF50;
+            display: block;
+        }
+
+        .message.error {
+            background: #f44336;
+            display: block;
+        }
+
+        .message.info {
+            background: #2196F3;
+            display: block;
+        }
+
+        /* Tableau */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        th {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* QR Code */
+        .qr-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #qrCode {
+            margin: 20px auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2em; }
+            .container { padding: 10px; }
+            .panel { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔓 PALGA WEB BYPASSING</h1>
+            <p>Solutions professionnelles de déblocage mobile</p>
+        </div>
+
+        <div class="nav">
+            <button class="nav-btn active" onclick="showPanel('home')">🏠 Accueil</button>
+            <button class="nav-btn" onclick="showPanel('services')">⚡ Services</button>
+            <button class="nav-btn" onclick="showPanel('login')">🔐 Connexion</button>
+            <button class="nav-btn" onclick="showPanel('register')">📝 Inscription</button>
+            <button class="nav-btn" onclick="showPanel('admin')" id="adminBtn" style="display:none">👑 Admin</button>
+        </div>
+
+        <!-- Panel Accueil -->
+        <div id="homePanel" class="panel active">
+            <h2>Bienvenue sur PALGA WEB BYPASSING</h2>
+            <p style="margin-top: 20px;">La solution ultime pour débloquer tous vos appareils mobiles</p>
+            
+            <div class="services-grid" style="margin-top: 40px;">
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>FRP Bypass</h3>
+                    <p>Débloquez tous les comptes Google</p>
+                    <div class="service-price">10 crédits</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3>MDM Removal</h3>
+                    <p>Supprimez les restrictions MDM</p>
+                    <div class="service-price">20 crédits</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Web Bypass</h3>
+                    <p>Méthodes innovantes en ligne</p>
+                    <div class="service-price">15 crédits</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <h3>Comment ça marche ?</h3>
+                <ol style="display: inline-block; text-align: left; margin-top: 20px;">
+                    <li>📝 Créez votre compte gratuitement</li>
+                    <li>💰 Contactez un créditeur pour ajouter des crédits</li>
+                    <li>⚡ Utilisez nos services de bypass</li>
+                    <li>📱 Suivez les instructions sur votre téléphone</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Panel Services -->
+        <div id="servicesPanel" class="panel">
+            <h2>Services disponibles</h2>
+            <div id="servicesList" class="services-grid"></div>
+            <div id="serviceResult" class="message"></div>
+        </div>
+
+        <!-- Panel Connexion -->
+        <div id="loginPanel" class="panel">
+            <h2>Connexion</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>ID ou Nom d'utilisateur</label>
+                    <input type="text" id="loginIdentifier" required>
+                </div>
+                <div class="form-group">
+                    <label>Mot de passe</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit">Se connecter</button>
+            </form>
+            <div id="loginMessage" class="message"></div>
+        </div>
+
+        <!-- Panel Inscription -->
+        <div id="registerPanel" class="panel">
+            <h2>Créer un compte</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label>Nom d'utilisateur *</label>
+                    <input type="text" id="regUsername" required>
+                </div>
+                <div class="form-group">
+                    <label>Mot de passe *</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="regEmail">
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp</label>
+                    <input type="text" id="regWhatsapp">
+                </div>
+                <button type="submit">S'inscrire</button>
+            </form>
+            <div id="registerMessage" class="message"></div>
+        </div>
+
+        <!-- Panel Admin -->
+        <div id="adminPanel" class="panel">
+            <h2>Panel Administrateur</h2>
+            <div class="nav" style="margin-bottom: 20px;">
+                <button class="nav-btn" onclick="loadUsers()">📋 Utilisateurs</button>
+                <button class="nav-btn" onclick="loadStats()">📊 Statistiques</button>
+                <button class="nav-btn" onclick="loadTransactions()">💰 Transactions</button>
+            </div>
+            <div id="adminContent"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'https://lebinaire.pythonanywhere.com/api';
+        let currentUser = null;
+
+        // Afficher panel
+        function showPanel(panelName) {
+            document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+            document.getElementById(panelName + 'Panel').classList.add('active');
+            
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Inscription
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                username: document.getElementById('regUsername').value,
+                password: document.getElementById('regPassword').value,
+                email: document.getElementById('regEmail').value,
+                whatsapp: document.getElementById('regWhatsapp').value
+            };
+            
+            try {
+                const response = await fetch(`${API_URL}/register`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                
+                const msgDiv = document.getElementById('registerMessage');
+                if (result.success) {
+                    msgDiv.className = 'message success';
+                    msgDiv.innerHTML = `✅ ${result.message}<br>Votre ID: <strong>${result.user_id}</strong><br>Conservez-le précieusement!`;
+                    document.getElementById('registerForm').reset();
+                } else {
+                    msgDiv.className = 'message error';
+                    msgDiv.innerHTML = `❌ ${result.error}`;
+                }
+            } catch (error) {
+                document.getElementById('registerMessage').className = 'message error';
+                document.getElementById('registerMessage').innerHTML = `❌ Erreur: ${error.message}`;
+            }
+        });
+
+        // Connexion
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                identifier: document.getElementById('loginIdentifier').value,
+                password: document.getElementById('loginPassword').value
+            };
+            
+            try {
+                const response = await fetch(`${API_URL}/login`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                
+                const msgDiv = document.getElementById('loginMessage');
+                if (result.success) {
+                    currentUser = result;
+                    localStorage.setItem('palga_user', JSON.stringify(result));
+                    msgDiv.className = 'message success';
+                    msgDiv.innerHTML = `✅ Connecté! Bienvenue ${result.username}<br>Crédits: ${result.credit}`;
+                    
+                    if (result.is_admin) {
+                        document.getElementById('adminBtn').style.display = 'block';
+                    }
+                    
+                    setTimeout(() => showPanel('services'), 2000);
+                } else {
+                    msgDiv.className = 'message error';
+                    msgDiv.innerHTML = `❌ ${result.error}`;
+                }
+            } catch (error) {
+                document.getElementById('loginMessage').className = 'message error';
+                document.getElementById('loginMessage').innerHTML = `❌ Erreur: ${error.message}`;
+            }
+        });
+
+        // Charger services
+        async function loadServices() {
+            const services = [
+                {id: 1, name: "FRP Bypass Standard", description: "Déblocage compte Google", price: 10, icon: "🔓"},
+                {id: 2, name: "FRP Bypass Avancé", description: "Pour Samsung/Huawei", price: 15, icon: "⚡"},
+                {id: 3, name: "MDM Removal", description: "Suppression MDM complet", price: 20, icon: "🔒"},
+                {id: 4, name: "Web Bypass", description: "Méthodes innovantes", price: 15, icon: "🌐"}
+            ];
+            
+            const container = document.getElementById('servicesList');
+            container.innerHTML = services.map(service => `
+                <div class="service-card">
+                    <div class="service-icon">${service.icon}</div>
+                    <h3>${service.name}</h3>
+                    <p>${service.description}</p>
+                    <div class="service-price">${service.price} crédits</div>
+                    <button class="service-btn" onclick="useService(${service.id}, '${service.name}', ${service.price})">
+                        Utiliser
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // Utiliser un service
+        async function useService(serviceId, serviceName, price) {
+            if (!currentUser) {
+                document.getElementById('serviceResult').className = 'message error';
+                document.getElementById('serviceResult').innerHTML = '❌ Veuillez vous connecter d\'abord';
+                showPanel('login');
+                return;
+            }
+            
+            if (currentUser.credit < price) {
+                document.getElementById('serviceResult').className = 'message error';
+                document.getElementById('serviceResult').innerHTML = `❌ Crédits insuffisants! Vous avez ${currentUser.credit} crédits, besoin de ${price}`;
+                return;
+            }
+            
+            try {
+                let endpoint = '';
+                if (serviceId <= 2) endpoint = '/services/frp-bypass';
+                else if (serviceId === 3) endpoint = '/services/mdm-bypass';
+                else endpoint = '/services/web-bypass';
+                
+                const response = await fetch(`${API_URL}${endpoint}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': currentUser.user_id
+                    },
+                    body: JSON.stringify({method_id: serviceId})
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    currentUser.credit = result.remaining_credit;
+                    document.getElementById('serviceResult').className = 'message success';
+                    document.getElementById('serviceResult').innerHTML = `
+                        ✅ ${serviceName} effectué!<br>
+                        Crédits restants: ${result.remaining_credit}<br><br>
+                        <strong>Commandes ADB à exécuter:</strong><br>
+                        ${result.commands.map(cmd => `<code>${cmd}</code><br>`).join('')}
+                    `;
+                } else {
+                    document.getElementById('serviceResult').className = 'message error';
+                    document.getElementById('serviceResult').innerHTML = `❌ ${result.error}`;
+                }
+            } catch (error) {
+                document.getElementById('serviceResult').className = 'message error';
+                document.getElementById('serviceResult').innerHTML = `❌ Erreur: ${error.message}`;
+            }
+        }
+
+        // Admin: Charger utilisateurs
+        async function loadUsers() {
+            if (!currentUser?.is_admin) return;
+            
+            try {
+                const response = await fetch(`${API_URL}/admin/users`, {
+                    headers: {'Authorization': currentUser.user_id}
+                });
+                const data = await response.json();
+                
+                document.getElementById('adminContent').innerHTML = `
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr><th>ID</th><th>Nom</th><th>Email</th><th>WhatsApp</th><th>Crédits</th><th>Admin</th><th>Actions</th></tr>
+                            </thead>
+                            <tbody>
+                                ${data.users.map(user => `
+                                    <tr>
+                                        <td>${user.user_id}</td>
+                                        <td>${user.username}</td>
+                                        <td>${user.email || '-'}</td>
+                                        <td>${user.whatsapp || '-'}</td>
+                                        <td>${user.credit}</td>
+                                        <td>${user.is_admin ? '✅' : '❌'}</td>
+                                        <td>
+                                            <input type="number" id="amount_${user.user_id}" placeholder="Montant" style="width:100px">
+                                            <button onclick="addCredit('${user.user_id}')">+/-</button>
+                                        </td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            } catch (error) {
+                document.getElementById('adminContent').innerHTML = `<div class="message error">Erreur: ${error.message}</div>`;
+            }
+        }
+
+        // Admin: Ajouter crédit
+        async function addCredit(userId) {
+            const amount = parseFloat(document.getElementById(`amount_${userId}`).value);
+            if (isNaN(amount)) return;
+            
+            try {
+                const response = await fetch(`${API_URL}/user/${userId}/credit`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': currentUser.user_id
+                    },
+                    body: JSON.stringify({amount: amount, description: "Admin adjustment"})
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert(`Crédit mis à jour! Nouveau solde: ${result.new_credit}`);
+                    loadUsers();
+                } else {
+                    alert(`Erreur: ${result.error}`);
+                }
+            } catch (error) {
+                alert(`Erreur: ${error.message}`);
+            }
+        }
+
+        // Admin: Charger stats
+        async function loadStats() {
+            if (!currentUser?.is_admin) return;
+            
+            try {
+                const response = await fetch(`${API_URL}/admin/stats`, {
+                    headers: {'Authorization': currentUser.user_id}
+                });
+                const stats = await response.json();
+                
+                document.getElementById('adminContent').innerHTML = `
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">👥</div>
+                            <h3>Total Utilisateurs</h3>
+                            <div class="service-price">${stats.total_users}</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">⚡</div>
+                            <h3>Services Utilisés</h3>
+                            <div class="service-price">${stats.total_services_used}</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">💰</div>
+                            <h3>Crédits en circulation</h3>
+                            <div class="service-price">${stats.total_credit_in_system}</div>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">📊</div>
+                            <h3>Activité (7j)</h3>
+                            <div class="service-price">${stats.weekly_activity}</div>
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                document.getElementById('adminContent').innerHTML = `<div class="message error">Erreur: ${error.message}</div>`;
+            }
+        }
+
+        async function loadTransactions() {
+            if (!currentUser?.is_admin) return;
+            document.getElementById('adminContent').innerHTML = '<p>Chargement...</p>';
+        }
+
+        // Vérifier session existante
+        const savedUser = localStorage.getItem('palga_user');
+        if (savedUser) {
+            currentUser = JSON.parse(savedUser);
+            if (currentUser.is_admin) {
+                document.getElementById('adminBtn').style.display = 'block';
+            }
+        }
+
+        // Initialiser
+        loadServices();
+    </script>
+</body>
+</html>
