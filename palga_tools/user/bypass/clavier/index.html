@@ -250,62 +250,52 @@
             const btn = document.getElementById('bypassBtn');
             const resultDiv = document.getElementById('resultMessage');
             
-            // Vérifier si l'utilisateur a entré un ID
             if (!userId) {
                 showMessage('Veuillez entrer votre ID PALGA', 'error');
                 return;
             }
             
-            // Désactiver le bouton pendant l'opération
             btn.disabled = true;
-            btn.innerHTML = '<span class="loader"></span> Vérification en cours...';
+            btn.innerHTML = '<span class="loader"></span> Vérification...';
             resultDiv.style.display = 'none';
             
             try {
-                // Étape 1: Vérifier les crédits de l'utilisateur
-                console.log('🔍 Vérification des crédits pour:', userId);
+                // ============ ÉTAPE 1: Vérifier si l'utilisateur existe ============
+                console.log('🔍 Recherche utilisateur:', userId);
                 
-                const loginResponse = await fetch(`${API_URL}/login`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ identifier: userId, password: userId === 'ADMIN' ? 'Admin123' : 'Demo123' })
-                });
+                // Utiliser la route /credit qui ne nécessite PAS de mot de passe
+                const creditResponse = await fetch(`${API_URL}/user/${userId}/credit`);
+                const creditData = await creditResponse.json();
                 
-                let userData = null;
-                if (loginResponse.ok) {
-                    userData = await loginResponse.json();
-                }
-                
-                // Si login échoue, essayer de récupérer les infos via l'API user
-                if (!userData || !userData.success) {
-                    // Essayer de récupérer directement
-                    const userResponse = await fetch(`${API_URL}/user/${userId}`);
-                    if (userResponse.ok) {
-                        userData = await userResponse.json();
-                    }
-                }
-                
-                if (!userData || (!userData.success && !userData.user_id)) {
-                    showMessage('❌ ID non trouvé. Vérifiez votre ID PALGA', 'error');
+                if (!creditData.exists) {
+                    showMessage(`❌ ID "${userId}" non trouvé. Vérifiez votre ID PALGA`, 'error');
                     btn.disabled = false;
                     btn.innerHTML = '🔓 DÉBLOQUER & OUVRIR LE CLAVIER';
                     return;
                 }
                 
-                const actualUserId = userData.user_id || userId;
-                const currentCredit = userData.credit || 0;
+                const actualUserId = creditData.user_id;
+                const currentCredit = creditData.credit;
                 
+                console.log(`✅ Utilisateur trouvé: ${creditData.username}`);
                 console.log(`💰 Crédits actuels: ${currentCredit}`);
                 
-                // Vérifier si assez de crédits
+                // Afficher les crédits
+                const remainingDiv = document.getElementById('remainingCredit');
+                remainingDiv.style.display = 'block';
+                remainingDiv.innerHTML = `💰 Crédits disponibles: ${currentCredit}`;
+                
                 if (currentCredit < 10) {
+                    remainingDiv.style.color = '#e74c3c';
                     showMessage(`❌ Crédits insuffisants ! Vous avez ${currentCredit} crédits. Besoin de 10 crédits. Contactez +226 54641531`, 'error');
                     btn.disabled = false;
                     btn.innerHTML = '🔓 DÉBLOQUER & OUVRIR LE CLAVIER';
                     return;
                 }
                 
-                // Étape 2: Débiter 10 crédits et ouvrir le clavier
+                remainingDiv.style.color = '#2ecc71';
+                
+                // ============ ÉTAPE 2: Débiter 10 crédits ============
                 console.log('🔓 Débit de 10 crédits...');
                 btn.innerHTML = '<span class="loader"></span> Débit en cours...';
                 
@@ -318,17 +308,14 @@
                 const bypassResult = await bypassResponse.json();
                 
                 if (bypassResult.success) {
-                    // Succès - ouvrir le clavier d'appel
                     console.log('✅ Succès! Ouverture du clavier...');
                     
                     showMessage(`✅ Succès ! 10 crédits débités. Ouverture du clavier d'appel...`, 'success');
                     
-                    // Afficher les crédits restants
-                    const remainingDiv = document.getElementById('remainingCredit');
-                    remainingDiv.style.display = 'block';
+                    // Mettre à jour l'affichage des crédits
                     remainingDiv.innerHTML = `💰 Crédits restants: ${bypassResult.remaining_credit}`;
                     
-                    // Ouvrir le clavier d'appel sur Android
+                    // Ouvrir le clavier d'appel
                     openDialer();
                     
                     btn.disabled = false;
@@ -358,7 +345,6 @@
             resultDiv.innerHTML = message;
             resultDiv.style.display = 'block';
             
-            // Auto-cacher après 5 secondes
             setTimeout(() => {
                 if (resultDiv.style.display === 'block') {
                     resultDiv.style.display = 'none';
@@ -367,85 +353,69 @@
         }
         
         function openDialer() {
-            // Méthode 1: Intent Android standard pour ouvrir le clavier d'appel
+            // Méthode 1: Lien tel:
             try {
-                // Créer un lien tel: qui ouvre le clavier d'appel
-                const telLink = document.createElement('a');
-                telLink.href = 'tel:';
-                telLink.style.display = 'none';
-                document.body.appendChild(telLink);
-                telLink.click();
-                document.body.removeChild(telLink);
-                console.log('📱 Tentative ouverture clavier via tel:');
+                window.location.href = 'tel:';
+                console.log('📱 Ouverture via tel:');
             } catch(e) {
                 console.log('Méthode tel: échouée', e);
             }
             
-            // Méthode 2: Utiliser l'intent Android direct
-            try {
-                window.location.href = 'intent://#Intent;scheme=tel;action=android.intent.action.DIAL;end';
-                console.log('📱 Tentative via intent:');
-            } catch(e) {
-                console.log('Méthode intent échouée', e);
-            }
+            // Méthode 2: Intent Android
+            setTimeout(() => {
+                try {
+                    window.location.href = 'intent://#Intent;scheme=tel;action=android.intent.action.DIAL;end';
+                    console.log('📱 Ouverture via intent');
+                } catch(e) {
+                    console.log('Méthode intent échouée', e);
+                }
+            }, 100);
             
-            // Méthode 3: Utiliser le protocole callto:
-            try {
-                window.location.href = 'callto:';
-                console.log('📱 Tentative via callto:');
-            } catch(e) {
-                console.log('Méthode callto échouée', e);
-            }
-            
-            // Afficher une instruction si rien ne fonctionne
+            // Message si rien ne fonctionne
             setTimeout(() => {
                 showMessage('📱 Si le clavier ne s\'ouvre pas automatiquement, ouvrez manuellement l\'application Téléphone', 'info');
-            }, 1000);
+            }, 500);
         }
         
-        // Permettre l'envoi avec la touche Entrée
+        // Auto-vérification des crédits quand on tape
+        let typingTimer;
+        document.getElementById('userId').addEventListener('input', function() {
+            clearTimeout(typingTimer);
+            const userId = this.value.trim();
+            if (userId.length >= 3) {
+                typingTimer = setTimeout(() => checkUserExists(userId), 500);
+            } else {
+                document.getElementById('remainingCredit').style.display = 'none';
+            }
+        });
+        
+        async function checkUserExists(userId) {
+            try {
+                const response = await fetch(`${API_URL}/user/${userId}/credit`);
+                const data = await response.json();
+                
+                const remainingDiv = document.getElementById('remainingCredit');
+                
+                if (data.exists) {
+                    remainingDiv.style.display = 'block';
+                    remainingDiv.innerHTML = `💰 Crédits disponibles: ${data.credit}`;
+                    remainingDiv.style.color = data.credit >= 10 ? '#2ecc71' : '#e74c3c';
+                } else {
+                    remainingDiv.style.display = 'block';
+                    remainingDiv.innerHTML = `❌ ID non trouvé`;
+                    remainingDiv.style.color = '#e74c3c';
+                }
+            } catch(e) {
+                console.log('Erreur vérification:', e);
+            }
+        }
+        
+        // Entrée pour valider
         document.getElementById('userId').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 startBypass();
             }
         });
-        
-        // Afficher les crédits quand on entre un ID (optionnel)
-        let typingTimer;
-        document.getElementById('userId').addEventListener('input', function() {
-            clearTimeout(typingTimer);
-            const userId = this.value.trim();
-            if (userId.length >= 4) {
-                typingTimer = setTimeout(() => checkUserCredit(userId), 500);
-            }
-        });
-        
-        async function checkUserCredit(userId) {
-            try {
-                const response = await fetch(`${API_URL}/login`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ identifier: userId, password: userId === 'ADMIN' ? 'Admin123' : 'Demo123' })
-                });
-                
-                if (response.ok) {
-                    const data = await response.json();
-                    if (data.success && data.credit !== undefined) {
-                        const remainingDiv = document.getElementById('remainingCredit');
-                        remainingDiv.style.display = 'block';
-                        remainingDiv.innerHTML = `💰 Crédits disponibles: ${data.credit}`;
-                        
-                        if (data.credit < 10) {
-                            remainingDiv.style.color = '#e74c3c';
-                        } else {
-                            remainingDiv.style.color = '#2ecc71';
-                        }
-                    }
-                }
-            } catch(e) {
-                // Ignorer les erreurs
-            }
-        }
     </script>
 </body>
 </html>
