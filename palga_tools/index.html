@@ -36,7 +36,6 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
         .navbar {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -90,7 +89,6 @@
             cursor: pointer;
         }
 
-        /* Sections */
         .section {
             padding: 6rem 0;
             min-height: 100vh;
@@ -109,7 +107,6 @@
             width: 100%;
         }
 
-        /* Hero Section */
         .hero-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -222,7 +219,6 @@
             opacity: 0.3;
         }
 
-        /* Section Titles */
         .section-title {
             font-size: 2.5rem;
             text-align: center;
@@ -237,7 +233,6 @@
             font-size: 1.1rem;
         }
 
-        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -275,12 +270,6 @@
             margin: 1rem 0;
         }
 
-        .service-description {
-            color: var(--gray);
-            margin-bottom: 1rem;
-        }
-
-        /* Download Section */
         .download-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -302,10 +291,6 @@
             margin-bottom: 1rem;
         }
 
-        .download-card h3 {
-            margin-bottom: 0.5rem;
-        }
-
         .system-requirements {
             background: white;
             border-radius: 1rem;
@@ -314,24 +299,6 @@
             margin: 0 auto;
         }
 
-        .system-requirements h3 {
-            margin-bottom: 1rem;
-        }
-
-        .system-requirements ul {
-            list-style: none;
-        }
-
-        .system-requirements li {
-            margin-bottom: 0.5rem;
-        }
-
-        .system-requirements li i {
-            color: var(--secondary);
-            margin-right: 0.5rem;
-        }
-
-        /* Recharge Section */
         .recharge-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -343,10 +310,6 @@
             border-radius: 1rem;
             padding: 2rem;
             box-shadow: var(--shadow);
-        }
-
-        .info-box h3 {
-            margin-bottom: 1rem;
         }
 
         .info-box ol {
@@ -380,10 +343,6 @@
             font-size: 1.2rem;
         }
 
-        .form-card h3 {
-            margin-bottom: 1.5rem;
-        }
-
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -410,7 +369,6 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
-            ring: 2px solid var(--primary);
         }
 
         .form-group small {
@@ -440,10 +398,6 @@
             gap: 0.5rem;
         }
 
-        .btn-paste:hover {
-            background: var(--primary-dark);
-        }
-
         .verification-status {
             margin-bottom: 1rem;
             padding: 0.75rem;
@@ -461,19 +415,6 @@
             background: #fee2e2;
             color: #991b1b;
             border-left: 4px solid var(--danger);
-        }
-
-        .verification-warning {
-            background: #fef3c7;
-            color: #92400e;
-            border-left: 4px solid var(--warning);
-        }
-
-        /* Auth Section */
-        .auth-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
         }
 
         .auth-container {
@@ -504,14 +445,9 @@
             cursor: pointer;
         }
 
-        /* Account Section */
         .account-section {
             background: var(--light);
             min-height: 100vh;
-        }
-
-        .account-section .container {
-            background: transparent;
         }
 
         .account-header {
@@ -523,10 +459,6 @@
             padding: 1rem 2rem;
             border-radius: 1rem;
             box-shadow: var(--shadow);
-        }
-
-        .account-header h2 {
-            color: var(--dark);
         }
 
         .account-grid {
@@ -570,19 +502,10 @@
             padding: 1rem;
         }
 
-        .credit-label {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
         .credit-value {
             font-size: 3rem;
             font-weight: 800;
             display: block;
-        }
-
-        .credit-unit {
-            font-size: 0.9rem;
         }
 
         .transactions-list {
@@ -606,10 +529,6 @@
             color: var(--danger);
         }
 
-        .service-selector {
-            margin-bottom: 1rem;
-        }
-
         .service-selector select {
             width: 100%;
             padding: 0.75rem;
@@ -623,8 +542,6 @@
             padding: 1rem;
             background: var(--light);
             border-radius: 0.5rem;
-            font-family: monospace;
-            font-size: 0.85rem;
             display: none;
         }
 
@@ -632,7 +549,6 @@
             display: block;
         }
 
-        /* Footer */
         .footer {
             background: var(--darker);
             color: white;
@@ -646,10 +562,6 @@
             margin-bottom: 2rem;
         }
 
-        .footer-section h4 {
-            margin-bottom: 1rem;
-        }
-
         .social-links {
             display: flex;
             gap: 1rem;
@@ -661,17 +573,12 @@
             transition: color 0.3s;
         }
 
-        .social-links a:hover {
-            color: var(--primary);
-        }
-
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Toast Notification */
         .toast {
             position: fixed;
             bottom: 2rem;
@@ -691,42 +598,34 @@
             display: block;
         }
 
-        .toast.success {
-            border-left: 4px solid var(--secondary);
-        }
-
-        .toast.error {
-            border-left: 4px solid var(--danger);
-        }
-
-        .toast.warning {
-            border-left: 4px solid var(--warning);
-        }
+        .toast.success { border-left: 4px solid var(--secondary); }
+        .toast.error { border-left: 4px solid var(--danger); }
+        .toast.warning { border-left: 4px solid var(--warning); }
 
         @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
 
-        /* Loading */
         .loading {
             text-align: center;
             padding: 1rem;
             color: var(--gray);
         }
 
-        /* Responsive */
+        .user-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            
+            .menu-toggle { display: block; }
             .nav-links {
                 display: none;
                 position: absolute;
@@ -738,60 +637,21 @@
                 padding: 1rem;
                 box-shadow: var(--shadow);
             }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .hero-section .container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
-            }
-            
-            .stats {
-                justify-content: center;
-            }
-            
-            .recharge-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .section {
-                padding: 4rem 0;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .account-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .account-header {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-            
-            .toast {
-                left: 1rem;
-                right: 1rem;
-                bottom: 1rem;
-            }
+            .nav-links.active { display: flex; }
+            .hero-section .container { grid-template-columns: 1fr; text-align: center; }
+            .hero-title { font-size: 2rem; }
+            .hero-buttons { justify-content: center; }
+            .stats { justify-content: center; }
+            .recharge-container { grid-template-columns: 1fr; }
+            .section { padding: 4rem 0; }
+            .section-title { font-size: 2rem; }
+            .account-grid { grid-template-columns: 1fr; }
+            .account-header { flex-direction: column; gap: 1rem; text-align: center; }
+            .toast { left: 1rem; right: 1rem; bottom: 1rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -813,138 +673,60 @@
         </div>
     </nav>
 
-    <!-- Section Accueil -->
     <section id="accueil" class="section hero-section active">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="gradient-text">PALGA TOOLS</span>
-                    <br>Solution Professionnelle
-                </h1>
-                <p class="hero-description">
-                    La solution ultime pour le déblocage FRP, la suppression MDM et bien plus encore. 
-                    Simple, rapide et efficace.
-                </p>
+                <h1 class="hero-title"><span class="gradient-text">PALGA TOOLS</span><br>Solution Professionnelle</h1>
+                <p class="hero-description">La solution ultime pour le déblocage FRP, la suppression MDM et bien plus encore.</p>
                 <div class="hero-buttons">
-                    <a class="btn btn-primary" data-section="telechargement">
-                        <i class="fas fa-download"></i> Télécharger
-                    </a>
-                    <a class="btn btn-secondary" data-section="services">
-                        <i class="fas fa-cogs"></i> Nos Services
-                    </a>
+                    <a class="btn btn-primary" data-section="telechargement"><i class="fas fa-download"></i> Télécharger</a>
+                    <a class="btn btn-secondary" data-section="services"><i class="fas fa-cogs"></i> Nos Services</a>
                 </div>
                 <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number">5000+</div>
-                        <div class="stat-label">Utilisateurs</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Taux de succès</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Support</div>
-                    </div>
+                    <div class="stat-item"><div class="stat-number">5000+</div><div class="stat-label">Utilisateurs</div></div>
+                    <div class="stat-item"><div class="stat-number">98%</div><div class="stat-label">Taux de succès</div></div>
+                    <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Support</div></div>
                 </div>
             </div>
-            <div class="hero-image">
-                <i class="fas fa-mobile-alt"></i>
-            </div>
+            <div class="hero-image"><i class="fas fa-mobile-alt"></i></div>
         </div>
     </section>
 
-    <!-- Section Services -->
     <section id="services" class="section">
         <div class="container">
             <h2 class="section-title">Nos Services</h2>
             <p class="section-subtitle">Des solutions professionnelles à prix compétitifs</p>
-            <div class="services-grid" id="servicesGrid">
-                <div class="loading">Chargement des services...</div>
-            </div>
+            <div class="services-grid" id="servicesGrid"><div class="loading">Chargement...</div></div>
         </div>
     </section>
 
-    <!-- Section Téléchargement -->
     <section id="telechargement" class="section">
         <div class="container">
             <h2 class="section-title">Télécharger PALGA TOOLS</h2>
             <p class="section-subtitle">Version 2.0.1 - Dernière mise à jour: Janvier 2026</p>
             <div class="download-cards">
-                <div class="download-card">
-                    <i class="fab fa-windows"></i>
-                    <h3>Windows</h3>
-                    <p>Version 64-bit</p>
-                    <button class="btn btn-primary download-btn" data-os="windows">
-                        <i class="fas fa-download"></i> Télécharger
-                    </button>
-                </div>
-                <div class="download-card">
-                    <i class="fab fa-android"></i>
-                    <h3>Android APK</h3>
-                    <p>Version mobile</p>
-                    <button class="btn btn-primary download-btn" data-os="android">
-                        <i class="fas fa-download"></i> Télécharger
-                    </button>
-                </div>
-                <div class="download-card">
-                    <i class="fab fa-linux"></i>
-                    <h3>Linux</h3>
-                    <p>Ubuntu/Debian</p>
-                    <button class="btn btn-primary download-btn" data-os="linux">
-                        <i class="fas fa-download"></i> Télécharger
-                    </button>
-                </div>
+                <div class="download-card"><i class="fab fa-windows"></i><h3>Windows</h3><p>Version 64-bit</p><button class="btn btn-primary download-btn" data-os="windows"><i class="fas fa-download"></i> Télécharger</button></div>
+                <div class="download-card"><i class="fab fa-android"></i><h3>Android APK</h3><p>Version mobile</p><button class="btn btn-primary download-btn" data-os="android"><i class="fas fa-download"></i> Télécharger</button></div>
+                <div class="download-card"><i class="fab fa-linux"></i><h3>Linux</h3><p>Ubuntu/Debian</p><button class="btn btn-primary download-btn" data-os="linux"><i class="fas fa-download"></i> Télécharger</button></div>
             </div>
-            <div class="system-requirements">
-                <h3><i class="fas fa-info-circle"></i> Configuration requise</h3>
-                <ul>
-                    <li><i class="fas fa-check"></i> Windows 10/11, Android 8+, ou Ubuntu 20.04+</li>
-                    <li><i class="fas fa-check"></i> 4GB RAM minimum</li>
-                    <li><i class="fas fa-check"></i> Connexion internet stable</li>
-                    <li><i class="fas fa-check"></i> Câble USB (pour Windows/Linux)</li>
-                </ul>
-            </div>
+            <div class="system-requirements"><h3><i class="fas fa-info-circle"></i> Configuration requise</h3><ul><li><i class="fas fa-check"></i> Windows 10/11, Android 8+, ou Ubuntu 20.04+</li><li><i class="fas fa-check"></i> 4GB RAM minimum</li><li><i class="fas fa-check"></i> Connexion internet stable</li><li><i class="fas fa-check"></i> Câble USB (pour Windows/Linux)</li></ul></div>
         </div>
     </section>
 
-    <!-- Section Recharge -->
     <section id="recharge" class="section">
         <div class="container">
             <h2 class="section-title">Recharger mes crédits</h2>
             <p class="section-subtitle">1 crédit = 100 FCFA | 10 ou 20 crédits par transaction</p>
-            
             <div class="recharge-container">
                 <div class="recharge-info">
                     <div class="info-box">
                         <i class="fas fa-phone-alt"></i>
                         <h3>Comment recharger ?</h3>
-                        <ol>
-                            <li>Composez <strong>*144*10*67759135*montant#</strong> sur votre téléphone Orange</li>
-                            <li>Entrez votre code secret Orange Money</li>
-                            <li>Confirmez la transaction</li>
-                            <li>Recevez le SMS de confirmation</li>
-                            <li>Cliquez sur "Coller le message" ci-dessous</li>
-                            <li>Validez la recharge</li>
-                        </ol>
-                        <div class="price-info">
-                            <p><strong>Tarifs :</strong></p>
-                            <p>📱 10 crédits = 1000 FCFA</p>
-                            <p>📱 20 crédits = 2000 FCFA</p>
-                        </div>
-                        <div class="warning-info">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <div>
-                                <strong>Règles de vérification :</strong><br>
-                                - Le message doit contenir "Votre paiement"<br>
-                                - Le bénéficiaire doit être "ISSIAKA BOKOUM"<br>
-                                - La transaction doit être collée dans les 2 minutes<br>
-                                - Un même ID ne peut être utilisé qu'une seule fois
-                            </div>
-                        </div>
+                        <ol><li>Composez <strong>*144*10*67759135*montant#</strong> sur votre téléphone Orange</li><li>Entrez votre code secret Orange Money</li><li>Confirmez la transaction</li><li>Recevez le SMS de confirmation</li><li>Cliquez sur "Coller le message"</li><li>Validez la recharge</li></ol>
+                        <div class="price-info"><p><strong>Tarifs :</strong></p><p>📱 10 crédits = 1000 FCFA</p><p>📱 20 crédits = 2000 FCFA</p></div>
+                        <div class="warning-info"><i class="fas fa-exclamation-triangle"></i><div><strong>Règles de vérification :</strong><br>- Le message doit contenir "Votre paiement"<br>- Le bénéficiaire doit être "ISSIAKA BOKOUM"<br>- La transaction doit être collée dans les 2 minutes<br>- Un même ID ne peut être utilisé qu'une seule fois</div></div>
                     </div>
                 </div>
-                
                 <div class="recharge-form-container">
                     <div class="form-card">
                         <h3><i class="fas fa-wallet"></i> Formulaire de recharge</h3>
@@ -952,37 +734,25 @@
                             <div class="form-group">
                                 <label for="rechargeUserId">ID Utilisateur ou Nom d'utilisateur</label>
                                 <input type="text" id="rechargeUserId" required placeholder="Ex: PALGA1A2B3C ou DEMO">
+                                <small>Votre identifiant unique PALGAxxxx</small>
                             </div>
-                            
                             <div class="form-group">
                                 <label for="creditAmount">Nombre de crédits</label>
-                                <select id="creditAmount" required>
-                                    <option value="">Sélectionnez...</option>
-                                    <option value="10">10 crédits - 1000 FCFA</option>
-                                    <option value="20">20 crédits - 2000 FCFA</option>
-                                </select>
+                                <select id="creditAmount" required><option value="">Sélectionnez...</option><option value="10">10 crédits - 1000 FCFA</option><option value="20">20 crédits - 2000 FCFA</option></select>
                             </div>
-                            
                             <div class="form-group">
                                 <label for="phoneNumber">Votre numéro Orange Money</label>
                                 <input type="tel" id="phoneNumber" placeholder="Ex: 67759135" required>
                             </div>
-                            
                             <div class="form-group">
                                 <label for="transactionMessage">Message de confirmation Orange Money</label>
                                 <div class="message-input-wrapper">
                                     <textarea id="transactionMessage" rows="4" placeholder="Collez ici le message SMS reçu après votre paiement..." required></textarea>
-                                    <button type="button" id="pasteMessageBtn" class="btn-paste">
-                                        <i class="fas fa-paste"></i> Coller
-                                    </button>
+                                    <button type="button" id="pasteMessageBtn" class="btn-paste"><i class="fas fa-paste"></i> Coller</button>
                                 </div>
                             </div>
-                            
                             <div id="verificationStatus" class="verification-status"></div>
-                            
-                            <button type="submit" id="submitRechargeBtn" class="btn btn-primary btn-block">
-                                <i class="fas fa-check-circle"></i> Vérifier et valider
-                            </button>
+                            <button type="submit" id="submitRechargeBtn" class="btn btn-primary btn-block"><i class="fas fa-check-circle"></i> Vérifier et valider</button>
                         </form>
                     </div>
                 </div>
@@ -990,21 +760,14 @@
         </div>
     </section>
 
-    <!-- Section Connexion -->
     <section id="connexion" class="section auth-section">
         <div class="container">
             <div class="auth-container">
                 <div class="auth-card">
                     <h2><i class="fas fa-sign-in-alt"></i> Connexion</h2>
                     <form id="loginForm">
-                        <div class="form-group">
-                            <label for="loginIdentifier">Nom d'utilisateur ou ID</label>
-                            <input type="text" id="loginIdentifier" required placeholder="Ex: DEMO ou PALGA1A2B3C">
-                        </div>
-                        <div class="form-group">
-                            <label for="loginPassword">Mot de passe</label>
-                            <input type="password" id="loginPassword" required>
-                        </div>
+                        <div class="form-group"><label for="loginIdentifier">Nom d'utilisateur ou ID</label><input type="text" id="loginIdentifier" required placeholder="Ex: DEMO ou PALGA1A2B3C"></div>
+                        <div class="form-group"><label for="loginPassword">Mot de passe</label><input type="password" id="loginPassword" required></div>
                         <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
                     </form>
                     <p class="auth-link">Pas encore de compte ? <a data-section="inscription">S'inscrire</a></p>
@@ -1013,33 +776,17 @@
         </div>
     </section>
 
-    <!-- Section Inscription -->
     <section id="inscription" class="section auth-section">
         <div class="container">
             <div class="auth-container">
                 <div class="auth-card">
                     <h2><i class="fas fa-user-plus"></i> Inscription</h2>
                     <form id="registerForm">
-                        <div class="form-group">
-                            <label for="regUsername">Nom d'utilisateur *</label>
-                            <input type="text" id="regUsername" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="regPassword">Mot de passe *</label>
-                            <input type="password" id="regPassword" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="regConfirmPassword">Confirmer le mot de passe *</label>
-                            <input type="password" id="regConfirmPassword" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="regEmail">Email</label>
-                            <input type="email" id="regEmail">
-                        </div>
-                        <div class="form-group">
-                            <label for="regWhatsapp">WhatsApp</label>
-                            <input type="tel" id="regWhatsapp" placeholder="Ex: 67759135">
-                        </div>
+                        <div class="form-group"><label for="regUsername">Nom d'utilisateur *</label><input type="text" id="regUsername" required></div>
+                        <div class="form-group"><label for="regPassword">Mot de passe *</label><input type="password" id="regPassword" required></div>
+                        <div class="form-group"><label for="regConfirmPassword">Confirmer le mot de passe *</label><input type="password" id="regConfirmPassword" required></div>
+                        <div class="form-group"><label for="regEmail">Email</label><input type="email" id="regEmail"></div>
+                        <div class="form-group"><label for="regWhatsapp">WhatsApp</label><input type="tel" id="regWhatsapp" placeholder="Ex: 67759135"></div>
                         <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
                     </form>
                     <p class="auth-link">Déjà inscrit ? <a data-section="connexion">Se connecter</a></p>
@@ -1048,120 +795,126 @@
         </div>
     </section>
 
-    <!-- Section Mon Compte -->
     <section id="mon-compte" class="section account-section">
         <div class="container">
             <div class="account-header">
                 <h2><i class="fas fa-user-circle"></i> Mon Compte</h2>
                 <button id="logoutBtn" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Déconnexion</button>
             </div>
-            
             <div class="account-grid">
-                <div class="account-card">
-                    <h3><i class="fas fa-id-card"></i> Informations</h3>
-                    <div class="info-row">
-                        <span>ID Utilisateur:</span>
-                        <strong id="accountUserId">-</strong>
-                    </div>
-                    <div class="info-row">
-                        <span>Nom d'utilisateur:</span>
-                        <strong id="accountUsername">-</strong>
-                    </div>
-                    <div class="info-row">
-                        <span>Email:</span>
-                        <strong id="accountEmail">-</strong>
-                    </div>
-                    <div class="info-row">
-                        <span>WhatsApp:</span>
-                        <strong id="accountWhatsapp">-</strong>
-                    </div>
-                </div>
-                
-                <div class="account-card credit-card">
-                    <h3><i class="fas fa-coins"></i> Mes crédits</h3>
-                    <div class="credit-balance">
-                        <span class="credit-label">Solde actuel:</span>
-                        <span class="credit-value" id="accountCredit">0</span>
-                        <span class="credit-unit">crédits</span>
-                    </div>
-                    <a class="btn btn-secondary btn-block" data-section="recharge">Recharger</a>
-                </div>
-                
-                <div class="account-card">
-                    <h3><i class="fas fa-history"></i> Historique</h3>
-                    <div class="transactions-list" id="transactionsList">
-                        <div class="loading">Chargement...</div>
-                    </div>
-                </div>
-                
-                <div class="account-card">
-                    <h3><i class="fas fa-rocket"></i> Utiliser un service</h3>
-                    <div class="service-selector">
-                        <select id="serviceSelect">
-                            <option value="">Choisir un service</option>
-                        </select>
-                        <button id="useServiceBtn" class="btn btn-primary btn-block">Utiliser</button>
-                    </div>
-                    <div id="serviceResult" class="service-result"></div>
-                </div>
+                <div class="account-card"><h3><i class="fas fa-id-card"></i> Informations</h3><div class="info-row"><span>ID Utilisateur:</span><strong id="accountUserId">-</strong></div><div class="info-row"><span>Nom d'utilisateur:</span><strong id="accountUsername">-</strong></div><div class="info-row"><span>Email:</span><strong id="accountEmail">-</strong></div><div class="info-row"><span>WhatsApp:</span><strong id="accountWhatsapp">-</strong></div></div>
+                <div class="account-card credit-card"><h3><i class="fas fa-coins"></i> Mes crédits</h3><div class="credit-balance"><span class="credit-label">Solde actuel:</span><span class="credit-value" id="accountCredit">0</span><span class="credit-unit">crédits</span></div><a class="btn btn-secondary btn-block" data-section="recharge">Recharger</a></div>
+                <div class="account-card"><h3><i class="fas fa-history"></i> Historique</h3><div class="transactions-list" id="transactionsList"><div class="loading">Chargement...</div></div></div>
+                <div class="account-card"><h3><i class="fas fa-rocket"></i> Utiliser un service</h3><div class="service-selector"><select id="serviceSelect"><option value="">Choisir un service</option></select><button id="useServiceBtn" class="btn btn-primary btn-block">Utiliser</button></div><div id="serviceResult" class="service-result"></div></div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>PALGA TOOLS</h4>
-                    <p>Solution professionnelle de déblocage mobile</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +225 67 759 135</p>
-                    <p><i class="fas fa-envelope"></i> Email: support@palga-tools.com</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Suivez-nous</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 PALGA TOOLS. Tous droits réservés.</p>
-            </div>
+            <div class="footer-content"><div class="footer-section"><h4>PALGA TOOLS</h4><p>Solution professionnelle de déblocage mobile</p></div><div class="footer-section"><h4>Contact</h4><p><i class="fab fa-whatsapp"></i> WhatsApp: +225 67 759 135</p><p><i class="fas fa-envelope"></i> Email: support@palga-tools.com</p></div><div class="footer-section"><h4>Suivez-nous</h4><div class="social-links"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-telegram"></i></a></div></div></div>
+            <div class="footer-bottom"><p>&copy; 2026 PALGA TOOLS. Tous droits réservés.</p></div>
         </div>
     </footer>
 
-    <!-- Toast -->
     <div id="toast" class="toast"></div>
 
     <script>
-        // Configuration
         const API_URL = 'https://palgatools-1.onrender.com';
-        
-        // État
         let currentUser = null;
-        
-        // Initialisation
+
+        // Clés localStorage
+        const STORAGE_KEYS = {
+            USER: 'palga_user',
+            RECHARGE_FORM: 'palga_recharge_form',
+            RECHARGE_STEP: 'palga_recharge_step',
+            LAST_SECTION: 'palga_last_section'
+        };
+
+        function saveRechargeFormData() {
+            const formData = {
+                userId: document.getElementById('rechargeUserId')?.value || '',
+                creditAmount: document.getElementById('creditAmount')?.value || '',
+                phoneNumber: document.getElementById('phoneNumber')?.value || '',
+                transactionMessage: document.getElementById('transactionMessage')?.value || '',
+                timestamp: new Date().toISOString()
+            };
+            localStorage.setItem(STORAGE_KEYS.RECHARGE_FORM, JSON.stringify(formData));
+        }
+
+        function loadRechargeFormData() {
+            const saved = localStorage.getItem(STORAGE_KEYS.RECHARGE_FORM);
+            if (saved) {
+                try {
+                    const data = JSON.parse(saved);
+                    if (data.userId) document.getElementById('rechargeUserId').value = data.userId;
+                    if (data.creditAmount) document.getElementById('creditAmount').value = data.creditAmount;
+                    if (data.phoneNumber) document.getElementById('phoneNumber').value = data.phoneNumber;
+                    if (data.transactionMessage) document.getElementById('transactionMessage').value = data.transactionMessage;
+                    return true;
+                } catch(e) {}
+            }
+            return false;
+        }
+
+        function clearRechargeFormData() {
+            localStorage.removeItem(STORAGE_KEYS.RECHARGE_FORM);
+            localStorage.removeItem(STORAGE_KEYS.RECHARGE_STEP);
+        }
+
+        function saveLastSection(sectionId) {
+            localStorage.setItem(STORAGE_KEYS.LAST_SECTION, sectionId);
+        }
+
+        function loadLastSection() {
+            return localStorage.getItem(STORAGE_KEYS.LAST_SECTION) || 'accueil';
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             setupEventListeners();
             loadServices();
-            checkAuth();
             initRechargePage();
+            loadCachedUser();
+            restoreLastSection();
         });
-        
-        // Configuration des événements
+
+        function loadCachedUser() {
+            const cached = localStorage.getItem(STORAGE_KEYS.USER);
+            if (cached) {
+                try {
+                    const user = JSON.parse(cached);
+                    if (user && user.user_id && user.username) {
+                        currentUser = user;
+                        updateUIForLoggedInUser();
+                        showToast(`Bon retour ${user.username} !`, 'success');
+                        if (document.getElementById('accountCredit')) {
+                            document.getElementById('accountCredit').textContent = user.credit || 0;
+                        }
+                        return true;
+                    }
+                } catch(e) {
+                    localStorage.removeItem(STORAGE_KEYS.USER);
+                }
+            }
+            updateUIForLoggedOutUser();
+            return false;
+        }
+
+        function restoreLastSection() {
+            const lastSection = loadLastSection();
+            if (lastSection && lastSection !== 'mon-compte') {
+                showSection(lastSection);
+            } else if (lastSection === 'mon-compte' && currentUser) {
+                showSection('mon-compte');
+            } else if (!currentUser && (lastSection === 'mon-compte' || lastSection === 'recharge')) {
+                showSection('accueil');
+            } else {
+                showSection(lastSection);
+            }
+        }
+
         function setupEventListeners() {
-            // Menu mobile
-            document.getElementById('menuToggle')?.addEventListener('click', () => {
-                document.getElementById('navLinks')?.classList.toggle('active');
-            });
-            
-            // Navigation
+            document.getElementById('menuToggle')?.addEventListener('click', () => document.getElementById('navLinks')?.classList.toggle('active'));
             document.querySelectorAll('.nav-link, [data-section]').forEach(el => {
                 el.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -1169,488 +922,256 @@
                     if (sectionId) showSection(sectionId);
                 });
             });
-            
-            // Formulaires
             document.getElementById('loginForm')?.addEventListener('submit', handleLogin);
             document.getElementById('registerForm')?.addEventListener('submit', handleRegister);
             document.getElementById('rechargeForm')?.addEventListener('submit', handleRechargeSubmit);
             document.getElementById('useServiceBtn')?.addEventListener('click', useService);
             document.getElementById('logoutBtn')?.addEventListener('click', logout);
+            document.querySelectorAll('.download-btn').forEach(btn => btn.addEventListener('click', () => showToast('Téléchargement bientôt disponible', 'info')));
             
-            // Téléchargement
-            document.querySelectorAll('.download-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    showToast('Téléchargement bientôt disponible', 'info');
-                });
+            const rechargeInputs = ['rechargeUserId', 'creditAmount', 'phoneNumber', 'transactionMessage'];
+            rechargeInputs.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('input', saveRechargeFormData);
             });
         }
-        
-        // Afficher une section
+
         function showSection(sectionId) {
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
+            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
             const targetSection = document.getElementById(sectionId);
-            if (targetSection) {
-                targetSection.classList.add('active');
-            }
-            
+            if (targetSection) targetSection.classList.add('active');
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('data-section') === sectionId) {
-                    link.classList.add('active');
-                }
+                if (link.getAttribute('data-section') === sectionId) link.classList.add('active');
             });
-            
-            if (sectionId === 'mon-compte' && currentUser) {
-                loadAccountData();
-            }
-            
-            document.getElementById('navLinks')?.classList.remove('active');
-            window.location.hash = sectionId;
-        }
-        
-        // Vérifier authentification
-        function checkAuth() {
-            const savedUser = localStorage.getItem('palga_user');
-            if (savedUser) {
-                try {
-                    currentUser = JSON.parse(savedUser);
-                    updateUIForLoggedInUser();
-                    return true;
-                } catch(e) {
-                    localStorage.removeItem('palga_user');
+            if (sectionId === 'mon-compte' && currentUser) loadAccountData();
+            if (sectionId === 'recharge') {
+                if (currentUser && currentUser.user_id) {
+                    const userIdInput = document.getElementById('rechargeUserId');
+                    if (userIdInput && !userIdInput.value) {
+                        userIdInput.value = currentUser.user_id;
+                        saveRechargeFormData();
+                    }
                 }
+                loadRechargeFormData();
             }
-            updateUIForLoggedOutUser();
-            return false;
+            document.getElementById('navLinks')?.classList.remove('active');
+            saveLastSection(sectionId);
         }
-        
-        // Mettre à jour l'UI pour utilisateur connecté
+
         function updateUIForLoggedInUser() {
             document.getElementById('connexionLink').style.display = 'none';
             document.getElementById('inscriptionLink').style.display = 'none';
             document.getElementById('monCompteLink').style.display = 'block';
-            
-            if (window.location.hash === '#connexion' || window.location.hash === '#inscription') {
-                showSection('mon-compte');
-            }
+            if (window.location.hash === '#connexion' || window.location.hash === '#inscription') showSection('mon-compte');
         }
-        
-        // Mettre à jour l'UI pour utilisateur déconnecté
+
         function updateUIForLoggedOutUser() {
             document.getElementById('connexionLink').style.display = 'block';
             document.getElementById('inscriptionLink').style.display = 'block';
             document.getElementById('monCompteLink').style.display = 'none';
             currentUser = null;
-            localStorage.removeItem('palga_user');
+            localStorage.removeItem(STORAGE_KEYS.USER);
         }
-        
-        // Charger les services
+
         async function loadServices() {
             try {
                 const response = await fetch(`${API_URL}/api/services`);
                 const services = await response.json();
-                
-                const servicesGrid = document.getElementById('servicesGrid');
-                if (!servicesGrid) return;
-                
-                if (services.length === 0) {
-                    servicesGrid.innerHTML = '<div class="loading">Aucun service disponible</div>';
-                    return;
-                }
-                
-                servicesGrid.innerHTML = '';
-                services.forEach(service => {
-                    const icon = service.name.includes('FRP') ? 'fa-unlock-alt' : 
-                                service.name.includes('MDM') ? 'fa-shield-alt' : 'fa-tools';
-                    
+                const grid = document.getElementById('servicesGrid');
+                if (!services.length) { grid.innerHTML = '<div class="loading">Aucun service</div>'; return; }
+                grid.innerHTML = '';
+                services.forEach(s => {
+                    const icon = s.name.includes('FRP') ? 'fa-unlock-alt' : s.name.includes('MDM') ? 'fa-shield-alt' : 'fa-tools';
                     const card = document.createElement('div');
                     card.className = 'service-card';
-                    card.innerHTML = `
-                        <div class="service-icon"><i class="fas ${icon}"></i></div>
-                        <h3>${escapeHtml(service.name)}</h3>
-                        <p class="service-description">${escapeHtml(service.description)}</p>
-                        <div class="service-price">${service.price} crédits</div>
-                        <button class="btn btn-primary" onclick="showSection('connexion')">Utiliser</button>
-                    `;
-                    servicesGrid.appendChild(card);
+                    card.innerHTML = `<div class="service-icon"><i class="fas ${icon}"></i></div><h3>${escapeHtml(s.name)}</h3><p class="service-description">${escapeHtml(s.description)}</p><div class="service-price">${s.price} crédits</div><button class="btn btn-primary" onclick="showSection('connexion')">Utiliser</button>`;
+                    grid.appendChild(card);
                 });
-            } catch (error) {
-                console.error('Erreur chargement services:', error);
-                document.getElementById('servicesGrid').innerHTML = '<div class="loading">Erreur de chargement</div>';
-            }
+            } catch(e) { document.getElementById('servicesGrid').innerHTML = '<div class="loading">Erreur</div>'; }
         }
-        
-        // Connexion
+
         async function handleLogin(e) {
             e.preventDefault();
             const identifier = document.getElementById('loginIdentifier').value.trim();
             const password = document.getElementById('loginPassword').value;
-            
-            if (!identifier || !password) {
-                showToast('Veuillez remplir tous les champs', 'error');
-                return;
-            }
-            
+            if (!identifier || !password) { showToast('Veuillez remplir tous les champs', 'error'); return; }
             try {
-                const response = await fetch(`${API_URL}/api/login`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ identifier, password })
-                });
-                
+                const response = await fetch(`${API_URL}/api/login`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ identifier, password }) });
                 const data = await response.json();
-                
                 if (data.success) {
                     currentUser = data;
-                    localStorage.setItem('palga_user', JSON.stringify(data));
+                    localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(data));
                     updateUIForLoggedInUser();
                     showToast('Connexion réussie !', 'success');
                     showSection('mon-compte');
                     loadAccountData();
-                } else {
-                    showToast(data.error || 'Identifiants incorrects', 'error');
-                }
-            } catch (error) {
-                showToast('Erreur de connexion au serveur', 'error');
-            }
+                } else showToast(data.error || 'Identifiants incorrects', 'error');
+            } catch(e) { showToast('Erreur de connexion', 'error'); }
         }
-        
-        // Inscription
+
         async function handleRegister(e) {
             e.preventDefault();
             const username = document.getElementById('regUsername').value.trim();
             const password = document.getElementById('regPassword').value;
-            const confirmPassword = document.getElementById('regConfirmPassword').value;
-            const email = document.getElementById('regEmail').value;
-            const whatsapp = document.getElementById('regWhatsapp').value;
-            
-            if (!username || !password) {
-                showToast('Nom d\'utilisateur et mot de passe requis', 'error');
-                return;
-            }
-            
-            if (password !== confirmPassword) {
-                showToast('Les mots de passe ne correspondent pas', 'error');
-                return;
-            }
-            
+            const confirm = document.getElementById('regConfirmPassword').value;
+            if (!username || !password) { showToast('Champs requis', 'error'); return; }
+            if (password !== confirm) { showToast('Mots de passe différents', 'error'); return; }
             try {
-                const response = await fetch(`${API_URL}/api/register`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ username, password, email, whatsapp })
-                });
-                
+                const response = await fetch(`${API_URL}/api/register`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username, password, email: document.getElementById('regEmail').value, whatsapp: document.getElementById('regWhatsapp').value }) });
                 const data = await response.json();
-                
-                if (data.success) {
-                    showToast('Inscription réussie ! Connectez-vous', 'success');
-                    showSection('connexion');
-                    document.getElementById('loginIdentifier').value = username;
-                } else {
-                    showToast(data.error || 'Erreur lors de l\'inscription', 'error');
-                }
-            } catch (error) {
-                showToast('Erreur de connexion au serveur', 'error');
-            }
+                if (data.success) { showToast('Inscription réussie ! Connectez-vous', 'success'); showSection('connexion'); document.getElementById('loginIdentifier').value = username; }
+                else showToast(data.error, 'error');
+            } catch(e) { showToast('Erreur', 'error'); }
         }
-        
-        // Déconnexion
+
         function logout() {
             currentUser = null;
-            localStorage.removeItem('palga_user');
+            localStorage.removeItem(STORAGE_KEYS.USER);
+            clearRechargeFormData();
             updateUIForLoggedOutUser();
-            showToast('Déconnecté avec succès', 'success');
+            showToast('Déconnecté', 'success');
             showSection('accueil');
         }
-        
-        // Charger les données du compte
+
         async function loadAccountData() {
             if (!currentUser) return;
-            
             document.getElementById('accountUserId').textContent = currentUser.user_id;
             document.getElementById('accountUsername').textContent = currentUser.username;
             document.getElementById('accountEmail').textContent = currentUser.email || 'Non renseigné';
             document.getElementById('accountWhatsapp').textContent = currentUser.whatsapp || 'Non renseigné';
             document.getElementById('accountCredit').textContent = currentUser.credit || 0;
-            
             await loadUserTransactions();
             await loadServicesForAccount();
         }
-        
-        // Charger l'historique
+
         async function loadUserTransactions() {
             try {
                 const response = await fetch(`${API_URL}/api/user/${currentUser.user_id}/transactions`);
                 const transactions = await response.json();
-                
                 const container = document.getElementById('transactionsList');
-                if (!transactions || transactions.length === 0) {
-                    container.innerHTML = '<div class="loading">Aucune transaction</div>';
-                    return;
-                }
-                
+                if (!transactions?.length) { container.innerHTML = '<div class="loading">Aucune transaction</div>'; return; }
                 container.innerHTML = '';
                 transactions.forEach(t => {
+                    const isPositive = t.type === 'recharge' || t.type === 'admin_credit';
                     const div = document.createElement('div');
                     div.className = 'transaction-item';
-                    const isPositive = t.type === 'recharge' || t.type === 'admin_credit';
-                    div.innerHTML = `
-                        <span>${escapeHtml(t.description || t.type)}</span>
-                        <span class="${isPositive ? 'transaction-positive' : 'transaction-negative'}">
-                            ${isPositive ? '+' : '-'} ${Math.abs(t.amount)} crédits
-                        </span>
-                    `;
+                    div.innerHTML = `<span>${escapeHtml(t.description || t.type)}</span><span class="${isPositive ? 'transaction-positive' : 'transaction-negative'}">${isPositive ? '+' : '-'} ${Math.abs(t.amount)} crédits</span>`;
                     container.appendChild(div);
                 });
-            } catch (error) {
-                console.error('Erreur chargement transactions:', error);
-            }
+            } catch(e) { console.error(e); }
         }
-        
-        // Charger les services pour le compte
+
         async function loadServicesForAccount() {
             try {
                 const response = await fetch(`${API_URL}/api/services`);
                 const services = await response.json();
-                
                 const select = document.getElementById('serviceSelect');
                 select.innerHTML = '<option value="">Choisir un service</option>';
-                services.forEach(service => {
-                    const option = document.createElement('option');
-                    option.value = service.id;
-                    option.textContent = `${service.name} - ${service.price} crédits`;
-                    select.appendChild(option);
-                });
-            } catch (error) {
-                console.error('Erreur:', error);
-            }
+                services.forEach(s => { const opt = document.createElement('option'); opt.value = s.id; opt.textContent = `${s.name} - ${s.price} crédits`; select.appendChild(opt); });
+            } catch(e) {}
         }
-        
-        // Utiliser un service
+
         async function useService() {
             const serviceId = document.getElementById('serviceSelect').value;
-            if (!serviceId) {
-                showToast('Veuillez choisir un service', 'error');
-                return;
-            }
-            
+            if (!serviceId) { showToast('Choisissez un service', 'error'); return; }
             const resultDiv = document.getElementById('serviceResult');
             resultDiv.innerHTML = '<div class="loading">Traitement...</div>';
             resultDiv.classList.add('show');
-            
             try {
-                const response = await fetch(`${API_URL}/api/service/frp-bypass`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ user_id: currentUser.user_id, service_id: serviceId })
-                });
-                
+                const response = await fetch(`${API_URL}/api/service/frp-bypass`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_id: currentUser.user_id, service_id: serviceId }) });
                 const data = await response.json();
-                
                 if (data.success) {
                     currentUser.credit = data.remaining_credit;
-                    localStorage.setItem('palga_user', JSON.stringify(currentUser));
+                    localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(currentUser));
                     document.getElementById('accountCredit').textContent = currentUser.credit;
-                    
-                    resultDiv.innerHTML = `
-                        <div class="verification-success">
-                            <strong>✓ Service utilisé avec succès !</strong><br>
-                            Service: ${data.service_name}<br>
-                            Crédits restants: ${data.remaining_credit}<br>
-                            ${data.commands ? `Commandes: <code>${data.commands.join(', ')}</code>` : ''}
-                        </div>
-                    `;
-                    showToast('Service utilisé avec succès', 'success');
+                    resultDiv.innerHTML = `<div class="verification-success">✓ Service utilisé !<br>Crédits restants: ${data.remaining_credit}</div>`;
+                    showToast('Service utilisé', 'success');
                     loadUserTransactions();
-                } else {
-                    resultDiv.innerHTML = `<div class="verification-error">❌ ${data.error}</div>`;
-                    showToast(data.error, 'error');
-                }
-            } catch (error) {
-                resultDiv.innerHTML = '<div class="verification-error">Erreur de connexion</div>';
-                showToast('Erreur de connexion', 'error');
-            }
+                } else resultDiv.innerHTML = `<div class="verification-error">❌ ${data.error}</div>`;
+            } catch(e) { resultDiv.innerHTML = '<div class="verification-error">Erreur</div>'; }
         }
-        
-        // Initialiser la page de recharge
+
         function initRechargePage() {
             const pasteBtn = document.getElementById('pasteMessageBtn');
             const messageTextarea = document.getElementById('transactionMessage');
-            
             if (pasteBtn) {
                 pasteBtn.addEventListener('click', async () => {
                     try {
                         const text = await navigator.clipboard.readText();
-                        if (text) {
-                            messageTextarea.value = text;
-                            showToast('Message collé avec succès', 'success');
-                            verifyMessagePreview(text);
-                        } else {
-                            showToast('Aucun texte trouvé', 'error');
-                        }
-                    } catch (err) {
-                        showToast('Coller manuellement (Ctrl+V)', 'warning');
-                    }
+                        if (text) { messageTextarea.value = text; showToast('Message collé', 'success'); verifyMessagePreview(text); saveRechargeFormData(); }
+                        else showToast('Aucun texte', 'error');
+                    } catch(e) { showToast('Coller manuellement (Ctrl+V)', 'warning'); }
                 });
             }
-            
-            if (messageTextarea) {
-                messageTextarea.addEventListener('input', (e) => {
-                    if (e.target.value.length > 50) {
-                        verifyMessagePreview(e.target.value);
-                    }
-                });
-            }
+            if (messageTextarea) messageTextarea.addEventListener('input', (e) => { if (e.target.value.length > 50) verifyMessagePreview(e.target.value); saveRechargeFormData(); });
+            document.getElementById('rechargeUserId')?.addEventListener('input', () => { if (currentUser) saveRechargeFormData(); });
+            document.getElementById('creditAmount')?.addEventListener('change', () => { if (document.getElementById('transactionMessage')?.value) verifyMessagePreview(document.getElementById('transactionMessage').value); saveRechargeFormData(); });
+            document.getElementById('phoneNumber')?.addEventListener('input', saveRechargeFormData);
         }
-        
-        // Vérifier le message en prévisualisation
+
         function verifyMessagePreview(message) {
             const creditsAmount = parseInt(document.getElementById('creditAmount')?.value);
             const phoneNumber = document.getElementById('phoneNumber')?.value;
-            
             if (!creditsAmount || !phoneNumber) return;
-            
             const statusDiv = document.getElementById('verificationStatus');
-            const checks = {
-                hasPayment: message.includes('Votre paiement'),
-                hasBeneficiary: message.includes('ISSIAKA BOKOUM')
-            };
-            
-            if (!checks.hasPayment) {
-                statusDiv.innerHTML = '<div class="verification-error">❌ Message invalide: ne contient pas "Votre paiement"</div>';
-                return;
-            }
-            
-            if (!checks.hasBeneficiary) {
-                statusDiv.innerHTML = '<div class="verification-error">❌ Nom du bénéficiaire incorrect</div>';
-                return;
-            }
-            
+            if (!message.includes('Votre paiement')) { statusDiv.innerHTML = '<div class="verification-error">❌ Message sans "Votre paiement"</div>'; return; }
+            if (!message.includes('ISSIAKA BOKOUM')) { statusDiv.innerHTML = '<div class="verification-error">❌ Bénéficiaire incorrect</div>'; return; }
             const amountMatch = message.match(/(\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})?)\s*FCFA/);
             if (amountMatch) {
-                const paidAmount = parseFloat(amountMatch[1].replace(/[.,]/g, '')) / 100;
-                const expectedAmount = creditsAmount * 100;
-                if (Math.abs(paidAmount - expectedAmount) > 1) {
-                    statusDiv.innerHTML = `<div class="verification-error">❌ Montant incorrect: attendu ${expectedAmount} FCFA, reçu ${paidAmount} FCFA</div>`;
-                    return;
-                }
+                const paid = parseFloat(amountMatch[1].replace(/[.,]/g, '')) / 100;
+                const expected = creditsAmount * 100;
+                if (Math.abs(paid - expected) > 1) { statusDiv.innerHTML = `<div class="verification-error">❌ Montant: attendu ${expected}FCFA, reçu ${paid}FCFA</div>`; return; }
             }
-            
             const transIdMatch = message.match(/Trans id:\s*([A-Z0-9.]+)/i);
             if (transIdMatch && transIdMatch[1]) {
                 const transId = transIdMatch[1];
-                if (!transId.startsWith('MP')) {
-                    statusDiv.innerHTML = '<div class="verification-error">❌ Format ID invalide (doit commencer par MP)</div>';
-                    return;
-                }
-                
+                if (!transId.startsWith('MP')) { statusDiv.innerHTML = '<div class="verification-error">❌ ID doit commencer par MP</div>'; return; }
                 const datePattern = /MP(\d{2})(\d{2})(\d{2})\.(\d{2})(\d{2})/;
                 const dateMatch = transId.match(datePattern);
                 if (dateMatch) {
-                    const year = 2000 + parseInt(dateMatch[1]);
-                    const month = parseInt(dateMatch[2]);
-                    const day = parseInt(dateMatch[3]);
-                    const hour = parseInt(dateMatch[4]);
-                    const minute = parseInt(dateMatch[5]);
-                    
-                    const transDate = new Date(year, month - 1, day, hour, minute);
+                    const year = 2000 + parseInt(dateMatch[1]), month = parseInt(dateMatch[2]), day = parseInt(dateMatch[3]), hour = parseInt(dateMatch[4]), minute = parseInt(dateMatch[5]);
+                    const transDate = new Date(year, month-1, day, hour, minute);
                     const now = new Date();
-                    
-                    if (transDate.toDateString() !== now.toDateString()) {
-                        statusDiv.innerHTML = `<div class="verification-error">❌ Transaction du ${transDate.toLocaleDateString()} - Utilisez une transaction du jour</div>`;
-                        return;
-                    }
-                    
-                    const timeDiff = (now - transDate) / 1000 / 60;
-                    if (timeDiff > 2) {
-                        statusDiv.innerHTML = `<div class="verification-error">❌ Transaction trop ancienne (${Math.floor(timeDiff)} min) - Délai max 2 min</div>`;
-                        return;
-                    }
+                    if (transDate.toDateString() !== now.toDateString()) { statusDiv.innerHTML = `<div class="verification-error">❌ Transaction du ${transDate.toLocaleDateString()} - Jour différent</div>`; return; }
+                    const diff = (now - transDate) / 1000 / 60;
+                    if (diff > 2) { statusDiv.innerHTML = `<div class="verification-error">❌ Transaction trop ancienne (${Math.floor(diff)} min) - Max 2 min</div>`; return; }
                 }
             }
-            
-            statusDiv.innerHTML = '<div class="verification-success">✓ Message valide ! Vous pouvez valider la recharge.</div>';
+            statusDiv.innerHTML = '<div class="verification-success">✓ Message valide ! Vous pouvez valider.</div>';
         }
-        
-        // Soumettre la recharge
+
         async function handleRechargeSubmit(e) {
             e.preventDefault();
-            
             const userId = document.getElementById('rechargeUserId').value.trim();
             const creditsAmount = parseInt(document.getElementById('creditAmount').value);
             const phoneNumber = document.getElementById('phoneNumber').value.trim();
-            const transactionMessage = document.getElementById('transactionMessage').value.trim();
-            
-            if (!userId || !creditsAmount || !phoneNumber || !transactionMessage) {
-                showToast('Veuillez remplir tous les champs', 'error');
-                return;
-            }
-            
-            const submitBtn = document.getElementById('submitRechargeBtn');
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Vérification...';
-            
+            const message = document.getElementById('transactionMessage').value.trim();
+            if (!userId || !creditsAmount || !phoneNumber || !message) { showToast('Tous les champs requis', 'error'); return; }
+            const btn = document.getElementById('submitRechargeBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Vérification...';
             try {
-                const response = await fetch(`${API_URL}/api/verify-recharge`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ user_id: userId, credits_amount: creditsAmount, phone_number: phoneNumber, transaction_message: transactionMessage })
-                });
-                
+                const response = await fetch(`${API_URL}/api/verify-recharge`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ user_id: userId, credits_amount: creditsAmount, phone_number: phoneNumber, transaction_message: message }) });
                 const data = await response.json();
-                
                 if (data.success) {
                     showToast(data.message, 'success');
+                    clearRechargeFormData();
                     document.getElementById('rechargeForm').reset();
                     document.getElementById('verificationStatus').innerHTML = '';
-                    
                     if (currentUser && (currentUser.user_id === userId || currentUser.username === userId)) {
                         currentUser.credit = data.new_credit;
-                        localStorage.setItem('palga_user', JSON.stringify(currentUser));
+                        localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(currentUser));
                         document.getElementById('accountCredit').textContent = currentUser.credit;
                         loadUserTransactions();
                     }
-                } else {
-                    showToast(data.error, 'error');
-                    document.getElementById('verificationStatus').innerHTML = `<div class="verification-error">❌ ${data.error}</div>`;
-                }
-            } catch (error) {
-                showToast('Erreur de connexion au serveur', 'error');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-check-circle"></i> Vérifier et valider';
-            }
+                } else { showToast(data.error, 'error'); document.getElementById('verificationStatus').innerHTML = `<div class="verification-error">❌ ${data.error}</div>`; }
+            } catch(e) { showToast('Erreur serveur', 'error'); }
+            finally { btn.disabled = false; btn.innerHTML = '<i class="fas fa-check-circle"></i> Vérifier et valider'; }
         }
-        
-        // Toast notification
-        function showToast(message, type = 'info') {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.className = `toast ${type} show`;
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 4000);
-        }
-        
-        // Escape HTML
-        function escapeHtml(text) {
-            if (!text) return '';
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
-        
-        // Vérifier le hash au chargement
-        if (window.location.hash) {
-            const section = window.location.hash.substring(1);
-            if (['accueil', 'services', 'telechargement', 'recharge', 'connexion', 'inscription', 'mon-compte'].includes(section)) {
-                setTimeout(() => showSection(section), 100);
-            }
-        }
+
+        function showToast(msg, type = 'info') { const toast = document.getElementById('toast'); toast.textContent = msg; toast.className = `toast ${type} show`; setTimeout(() => toast.classList.remove('show'), 4000); }
+        function escapeHtml(text) { if (!text) return ''; const div = document.createElement('div'); div.textContent = text; return div.innerHTML; }
     </script>
 </body>
 </html>
